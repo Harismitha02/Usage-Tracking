@@ -1,0 +1,22 @@
+{% extends "usageTrack/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<form action="" method="post" autocomplete="off">
+    {% csrf_token %}
+    {{form.username|as_crispy_field}}
+    {{form.password|as_crispy_field}}
+    <br><br>
+    <div class="row">
+        
+        <!-- <div class="col-md-4">
+            <a href="{% url 'dashboard_page' %}" class="btn btn-secondry btn-success btn-block btn-lg">
+                <i class="fas fa-database"></i> Submit
+            </a>
+        </div> -->
+        <div class="col-md-8">
+            <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i> Submit</button>
+        </div>
+    </div>
+</form>
+{% endblock content %}
